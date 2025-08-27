@@ -47,3 +47,54 @@ const navLinks = document.querySelector(".nav-links");
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
+
+// ============================
+// Search Functionality
+// ============================
+const searchIcon = document.querySelector(".search-icon img");
+const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("searchInput");
+
+// Klik ikon search → toggle input
+searchIcon.addEventListener("click", () => {
+  searchBox.style.display =
+    searchBox.style.display === "block" ? "none" : "block";
+  searchInput.focus();
+});
+
+// Fungsi pencarian
+function searchSite() {
+  const query = searchInput.value.toLowerCase();
+
+  if (!query) return;
+
+  // Daftar kata kunci + halaman tujuan
+  const pages = [
+    { keyword: ["home", "beranda"], url: "index.html" },
+    { keyword: ["menu", "makanan"], url: "makanan.html" },
+    { keyword: ["minuman", "drink"], url: "minuman.html" },
+    { keyword: ["dessert", "pencuci mulut"], url: "dessert.html" },
+    { keyword: ["location", "lokasi", "alamat"], url: "index.html#location" },
+    { keyword: ["about", "tentang"], url: "index.html#about" },
+    { keyword: ["nasi goreng"], url: "nasi-goreng.html" },
+    { keyword: ["sate ayam"], url: "sate-ayam.html" },
+    { keyword: ["soto lamongan"], url: "soto-lamongan.html" },
+    { keyword: ["air mineral"], url: "air-mineral.html" },
+    { keyword: ["es lemon tea"], url: "es-lemon-tea.html" },
+    { keyword: ["jus alpukat"], url: "jus-alpukat.html" },
+    { keyword: ["cheesecake"], url: "cheesecake.html" },
+    { keyword: ["candy ice cream"], url: "candy-ice-cream.html" },
+    { keyword: ["macaron", "macaroon"], url: "macaron.html" },
+  ];
+
+  // Cari halaman yang cocok
+  for (let p of pages) {
+    if (p.keyword.some((k) => query.includes(k))) {
+      window.location.href = p.url;
+      return;
+    }
+  }
+
+  // Jika tidak ada hasil
+  alert("Hasil tidak ditemukan.");
+}

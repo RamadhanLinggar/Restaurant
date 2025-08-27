@@ -67,6 +67,37 @@ nav ul li a:hover {
   height: 24px;
   cursor: pointer;
 }
+/* Search Box */
+.search-box {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  background: rgba(0,0,0,0.85);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.search-box input {
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 6px 10px;
+  margin-left: 5px;
+  border: none;
+  background: #ffd700;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.search-box button:hover {
+  background: #ffcc00;
+}
+
 
 /* Hamburger default (hidden di desktop) */
 .hamburger {
