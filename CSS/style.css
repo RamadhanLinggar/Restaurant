@@ -1,0 +1,547 @@
+/* ===================== */
+/* Reset + Global Style  */
+/* ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #111;
+}
+
+/* ===================== */
+/* Header */
+/* ===================== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 10px 30px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Logo */
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff8dc;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+/* Search Icon */
+.search-icon img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Hamburger default (hidden di desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: 15px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff8dc;
+  border-radius: 3px;
+}
+
+/* ===================== */
+/* Slider */
+/* ===================== */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full layar */
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; /* biar full asli tanpa ketarik aneh */
+}
+
+/* Nama Restoran di atas slider */
+.restaurant-name {
+  position: absolute;
+  top: 17px;
+  left: 80px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffd700; /* warna emas */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  z-index: 15;
+}
+
+/* Caption */
+.caption {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Caption dengan kotak */
+.caption.box-caption {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px 25px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Dot navigation */
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dots .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dots .dot.active {
+  background-color: #fff;
+}
+
+/* ===================== */
+/* Content Section */
+/* ===================== */
+.content-section {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+/* Default background untuk section umum */
+.content-section:not(.menu-daftar) {
+  background: #222;
+}
+
+.content-section:nth-child(even):not(.menu-daftar) {
+  background: #333;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+/* ===================== */
+/* Menu Section (bg kayu + overlay) */
+/* ===================== */
+#menu {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background: url("../Gambar/bg-wood.jpg") no-repeat center center/cover;
+  color: #fff;
+  z-index: 1;
+}
+
+#menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.65); /* overlay */
+  z-index: 0;
+}
+
+#menu h2,
+#menu p,
+#menu .menu-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Menu Grid Desktop */
+.menu-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+/* Item Menu Utama (Makanan, Minuman, Dessert) */
+.menu-item.utama {
+  background: #444;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  width: 220px;
+  height: 230px;
+  flex-shrink: 0;
+}
+
+.menu-item.utama img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+.menu-item h3 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.menu-item p {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* Item Menu Daftar */
+.menu-item.daftar {
+  width: 350px;
+  background: #333;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.menu-item.daftar img {
+  width: 100%; /* gambar full isi card */
+  height: 200px; /* samakan tinggi semua */
+  object-fit: cover; /* crop gambar biar rapi */
+  border-radius: 12px;
+  display: block;
+}
+
+/* ===================== */
+/* Menu Card (opsional) */
+/* ===================== */
+.menu-card {
+  display: block;
+  background: #222;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-card h3 {
+  text-align: center;
+  padding: 15px;
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================== */
+/* Daftar makanan/minuman/dessert */
+/* ===================== */
+.menu-daftar {
+  min-height: 100vh;
+  background: url("../Gambar/bg-wood.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-daftar .menu-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Halaman detail makanan */
+.food-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  min-height: 100vh;
+  background: url(../Gambar/bg-wood.jpg) no-repeat center center/cover;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.food-detail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.60); /* overlay gelap */
+  z-index: 0;
+}
+
+.food-image,
+.food-info {
+  position: relative; /* konten di atas overlay */
+  z-index: 1;
+}
+
+.food-image img {
+  width: 400px; /* ukuran default desktop */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.food-info {
+  max-width: 500px;
+}
+
+.food-info h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.food-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e04320;
+}
+
+/* ===================== */
+/* Location Section */
+/* ===================== */
+#location {
+  position: relative;
+  background: url("../Gambar/bg-location3.jpg") no-repeat center center/cover;
+  padding: 80px 30px;
+  color: #fff;
+  z-index: 1;
+}
+
+#location::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.7);
+  z-index: 0;
+}
+
+#location h2,
+#location .location-container {
+  position: relative;
+  z-index: 1;
+}
+
+.location-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap; /* biar responsif */
+}
+
+.map iframe {
+  width: 400px;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+.map p {
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.location-info {
+  max-width: 400px;
+  text-align: left;
+  color: #ddd;
+}
+
+.location-info h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+/* Link IG/WA/email */
+.location-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.location-info a:hover {
+  color: #ffd700;
+}
+
+/* ===================== */
+/* Responsive (Mobile) */
+/* ===================== */
+@media (max-width: 768px) {
+  /* Navbar */
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menu jadi vertikal */
+  .menu-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Location jadi 1 kolom */
+  .location-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Nama restoran kecil di HP */
+  .restaurant-name {
+    font-size: 1rem;
+    top: 20px;
+    left: 80px;
+  }
+
+  .food-detail {
+    flex-direction: column; /* jadi kolom, bukan sejajar */
+    text-align: center; /* teks rata tengah */
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .food-image img {
+    border: 5px !important;
+  }
+
+  .food-info {
+    max-width: 100%;
+  }
+
+  .food-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .food-info p {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+}

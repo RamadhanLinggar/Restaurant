@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="Gambar/logo.png" alt="Logo" />
+      </div>
+
+      <!-- Navigation -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+      <!-- Search Icon -->
+      <div class="search-icon">
+        <img src="Gambar/search2.png" alt="Search" />
+      </div>
+    </header>
+
+    <!-- Hero Section / Slider -->
+    <section class="slider">
+      <!-- Nama Restoran -->
+      <div class="restaurant-name">Resto Mari Mampir</div>
+
+      <div class="slides">
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <img src="Gambar/gambar-interior-restoran.jpg" alt="Interior" />
+          <div class="caption">Interior Restoran</div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <img src="Gambar/gambar-luar-restoran.jpg" alt="Luar" />
+          <div class="caption box-caption">
+            Hallo, selamat datang di Restaurant kami, silahkan pilih pesanan
+            yang diinginkan
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <img src="Gambar/gambar-makanan-restoran.jpg" alt="Makanan" />
+          <div class="caption box-caption">Terima Kasih</div>
+        </div>
+      </div>
+
+      <!-- Dot Navigation -->
+      <div class="dots"></div>
+    </section>
+
+    <!-- Section Menu (full screen) -->
+    <section id="menu" class="content-section menu-utama">
+      <h2>Menu</h2>
+      <p>Silahkan pilih jenis menu.</p>
+
+      <div class="menu-grid">
+        <!-- Item Makanan -->
+        <div class="menu-item utama">
+          <a href="makanan.html">
+            <img src="Gambar/Makanan.jpg" alt="Makanan" />
+            <h3>Makanan</h3>
+          </a>
+        </div>
+
+        <!-- Item Minuman -->
+        <div class="menu-item utama">
+          <a href="minuman.html">
+            <img src="Gambar/minuman.jpg" alt="Minuman" />
+            <h3>Minuman</h3>
+          </a>
+        </div>
+
+        <!-- Item Dessert -->
+        <div class="menu-item utama">
+          <a href="dessert.html">
+            <img src="Gambar/Dessert.jpg" alt="Dessert" />
+            <h3>Dessert</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Location -->
+    <section id="location" class="content-section">
+      <h2>Location</h2>
+
+      <div class="location-container">
+        <!-- Map -->
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126906.93358124908!2d106.89097475715384!3d-6.284533052568554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698c6900964f69%3A0xd00495351896398!2sBekasi%2C%20Kota%20Bks%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1755736831219!5m2!1sid!2sid"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <p>Kami berlokasi di Bekasi.</p>
+        </div>
+
+        <!-- Info -->
+        <div class="location-info">
+          <h3>Kontak Kami</h3>
+          <p>Jl. Mangga Raya No.123, Bekasi</p>
+
+          <p>
+            <img
+              src="Gambar/logo-IG.png"
+              alt="Instagram"
+              style="width: 20px; vertical-align: middle; margin-right: 5px"
+            />
+            <a
+              href="https://www.instagram.com/ramadhan__linggar"
+              target="_blank"
+              >@Resto Mari Mampir</a
+            >
+          </p>
+
+          <p>
+            <img
+              src="Gambar/logo-WA.png"
+              alt="WhatsApp"
+              style="width: 20px; vertical-align: middle; margin-right: 5px"
+            />
+            0812-3456-7890
+          </p>
+
+          <p>
+            <img
+              src="Gambar/logo-email.png"
+              alt="email"
+              style="width: 20px; vertical-align: middle; margin-right: 5px"
+            />
+            RestoMariMampir@gmail.com
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section About -->
+    <section id="about" class="content-section">
+      <h2>About Us</h2>
+      <p>
+        Restaurant kami menyediakan berbagai hidangan nusantara dengan cita rasa
+        otentik.
+      </p>
+
+      <h4>Halal Certificate</h4>
+      <h4>Terms and Condition</h4>
+      <h4>Privacy Policy</h4>
+
+      <h5>© 2025 Resto Mari Mampir. All Rights Reserved.</h5>
+    </section>
+
+    <script src="JS/restoran.js"></script>
+  </body>
+</html>
