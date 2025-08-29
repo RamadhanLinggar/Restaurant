@@ -498,7 +498,7 @@ nav ul li a:hover {
 /* ===================== */
 /* Responsive (Mobile) */
 /* ===================== */
-@media (max-width: 670px) {
+@media (max-width: 680px) {
   /* Navbar */
   nav ul {
     display: none;
