@@ -71,7 +71,8 @@ function searchSite() {
   // Daftar kata kunci + halaman tujuan
   const pages = [
     { keyword: ["home", "beranda"], url: "index.html" },
-    { keyword: ["menu", "makanan"], url: "makanan.html" },
+    { keyword: ["menu"], url: "index.html#menu" },
+    { keyword: ["makanan", "food"], url: "makanan.html" },
     { keyword: ["minuman", "drink"], url: "minuman.html" },
     { keyword: ["dessert", "pencuci mulut"], url: "dessert.html" },
     { keyword: ["location", "lokasi", "alamat"], url: "index.html#location" },
