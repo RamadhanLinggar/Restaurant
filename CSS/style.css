@@ -420,11 +420,21 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
-.price {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #e04320;
+.btn-pesan {
+  background-color: #ffb703;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.btn-pesan:hover {
+  background-color: #fb8500;
+}
+
 
 /* ===================== */
 /* Location Section */

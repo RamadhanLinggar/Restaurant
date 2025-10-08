@@ -99,3 +99,20 @@ function searchSite() {
   // Jika tidak ada hasil
   alert("Hasil tidak ditemukan.");
 }
+
+// ============================
+// Fitur Pesan Makanan via WhatsApp
+// ============================
+
+function pesanMakanan() {
+  const namaMakanan = "Nasi Goreng Spesial";
+  const harga = 25000;
+  const pesan = `Halo, saya ingin memesan ${namaMakanan} seharga Rp ${harga.toLocaleString()}`;
+  
+  // Nomor WhatsApp restoran (ubah sesuai nomor kamu)
+  const nomorWA = "081212023290";
+  const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+  
+  // Buka link WhatsApp di tab baru
+  window.open(url, '_blank');
+}
