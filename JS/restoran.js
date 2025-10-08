@@ -110,7 +110,7 @@ function pesanMakanan() {
   const pesan = `Halo, saya ingin memesan ${namaMakanan} seharga Rp ${harga.toLocaleString()}`;
   
   // Nomor WhatsApp restoran (ubah sesuai nomor kamu)
-  const nomorWA = "081212023290";
+  const nomorWA = "6281212023290";
   const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
   
   // Buka link WhatsApp di tab baru
