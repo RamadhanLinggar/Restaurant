@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pemesanan</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <h2>Form Pemesanan Makanan</h2>
+
+  <form action="simpan_pesanan.php" method="POST">
+    <label>Nama:</label><br>
+    <input type="text" name="nama" required><br><br>
+
+    <label>Jumlah:</label><br>
+    <input type="number" name="jumlah" required min="1" value="1"><br><br>
+
+    <button type="submit">Kirim Pesanan</button>
+  </form>
+</body>
+</html>
