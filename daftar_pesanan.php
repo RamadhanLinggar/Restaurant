@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'Koneksi.php';
+include 'koneksi.php';
 
 // Cek apakah admin sudah login
 if (!isset($_SESSION['admin'])) {

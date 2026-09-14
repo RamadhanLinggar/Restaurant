@@ -1,30 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Es Teh Manis</title>
-    <link rel="stylesheet" href="CSS/style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <a href="index.html"><img src="Gambar/Logo.png" alt="Logo" /></a>
-      </div>
-      <h1 class="page-title">Air Mineral</h1>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air Mineral</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="Gambar/Logo.png" alt="Logo" /></a>
+    </div>
+    <h1 class="page-title">Air Mineral</h1>
+  </header>
 
-    <section class="food-detail">
-      <div class="food-image">
-        <img src="Gambar/air-mineral.jpg" alt="Air Mineral" />
-      </div>
-      <div class="food-info">
-        <h2>Air Mineral</h2>
-        <p>
-         Air mineral murni, segar setiap saat.
-        </p>
-        <p class="price">Rp 5.000</p>
-      </div>
-    </section>
-  </body>
+  <!-- Konten -->
+  <section class="food-detail">
+    <div class="food-image">
+      <img src="Gambar/air-mineral.jpg" alt="Air Mineral" />
+    </div>
+    <div class="food-info">
+      <h2>Air Mineral Segar</h2>
+      <p>
+        Air mineral murni yang menyegarkan, cocok untuk menemani setiap hidangan.
+      </p>
+      <p style="color: red; font-weight: bold">Rp 5.000</p>
+
+      <!-- Form Pemesanan -->
+      <form action="pesan.php" method="POST" class="form-pesan">
+        <input type="hidden" name="makanan" value="Air Mineral Segar">
+
+        <label>Nama:</label>
+        <input type="text" name="nama" placeholder="Nama Anda" required>
+
+        <label>Jumlah:</label>
+        <input type="number" name="jumlah" id="jumlah" min="1" value="1" required>
+
+        <label>Total (Rp):</label>
+        <input type="text" name="total" id="total" value="5.000" readonly>
+
+        <button type="submit" class="btn-pesan">Pesan Sekarang</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    // Harga satuan Air Mineral
+    const hargaSatuan = 5000;
+
+    // Ambil elemen input
+    const jumlahInput = document.getElementById("jumlah");
+    const totalInput = document.getElementById("total");
+
+    // Fungsi format rupiah (pakai titik)
+    function formatRupiah(angka) {
+      return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    // Fungsi hitung total
+    function updateTotal() {
+      const jumlah = parseInt(jumlahInput.value) || 1;
+      const total = hargaSatuan * jumlah;
+      totalInput.value = formatRupiah(total);
+    }
+
+    // Event listener dan inisialisasi awal
+    jumlahInput.addEventListener("input", updateTotal);
+    updateTotal();
+  </script>
+
+  <script src="JS/restoran.js" defer></script>
+</body>
 </html>

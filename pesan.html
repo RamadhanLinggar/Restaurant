@@ -1,9 +1,12 @@
-<form action="simpan_pesanan.php" method="POST">
-  <label>Nama Makanan/Minuman:</label><br>
-  <input type="text" name="nama" required><br>
+<form action="pesan.php" method="POST">
+  <input type="hidden" name="nama_makanan" value="Nasi Goreng Spesial">
+  <input type="hidden" name="harga" value="25000">
+  
+  <label>Nama Anda:</label>
+  <input type="text" name="nama" required>
 
-  <label>Jumlah:</label><br>
-  <input type="number" name="jumlah" required><br>
+  <label>Jumlah:</label>
+  <input type="number" name="jumlah" min="1" value="1" required>
 
-  <button type="submit">Pesan</button>
+  <button type="submit">Pesan Sekarang</button>
 </form>

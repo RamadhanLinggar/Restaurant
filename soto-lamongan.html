@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soto Lamongan</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <div class="logo"><a href="index.html"><img src="Gambar/Logo.png" alt="Logo"></a></div>
+    <div class="logo">
+      <a href="index.html"><img src="Gambar/Logo.png" alt="Logo" /></a>
+    </div>
     <h1 class="page-title">Soto Lamongan</h1>
   </header>
 
+  <!-- Konten -->
   <section class="food-detail">
     <div class="food-image">
-      <img src="Gambar/Soto Lamongan2.jpg" alt="Soto Lamongan">
+      <img src="Gambar/Soto Lamongan2.jpg" alt="Soto Lamongan" />
     </div>
     <div class="food-info">
-      <h2>Soto Lamongan</h2>
+      <h2>Soto Lamongan Spesial</h2>
       <p>
         Kuah gurih kuning khas Lamongan dengan suwiran ayam, bihun, 
-        telur, dan koya yang menambah cita rasa.
+        telur, dan koya yang menambah cita rasa autentik.
       </p>
-      <p class="price">Rp 28.000</p>
+      <p style="color: red; font-weight: bold">Rp 28.000</p>
+
+      <!-- Form Pemesanan -->
+      <form action="pesan.php" method="POST" class="form-pesan">
+        <input type="hidden" name="makanan" value="Soto Lamongan Spesial">
+
+        <label>Nama:</label>
+        <input type="text" name="nama" placeholder="Nama Anda" required>
+
+        <label>Jumlah:</label>
+        <input type="number" name="jumlah" id="jumlah" min="1" value="1" required>
+
+        <label>Total (Rp):</label>
+        <input type="text" name="total" id="total" value="28.000" readonly>
+
+        <button type="submit" class="btn-pesan">Pesan Sekarang</button>
+      </form>
     </div>
   </section>
+
+  <!-- Script -->
+  <script>
+    // Harga satuan Soto Lamongan
+    const hargaSatuan = 28000;
+
+    // Ambil elemen input
+    const jumlahInput = document.getElementById("jumlah");
+    const totalInput = document.getElementById("total");
+
+    // Fungsi format rupiah (pakai titik)
+    function formatRupiah(angka) {
+      return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    // Fungsi hitung total
+    function updateTotal() {
+      const jumlah = parseInt(jumlahInput.value) || 1;
+      const total = hargaSatuan * jumlah;
+      totalInput.value = formatRupiah(total);
+    }
+
+    // Saat jumlah diubah, hitung totalnya
+    jumlahInput.addEventListener("input", updateTotal);
+
+    // Jalankan saat halaman pertama kali dimuat
+    updateTotal();
+  </script>
+
+  <script src="JS/restoran.js" defer></script>
 </body>
 </html>

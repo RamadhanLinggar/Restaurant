@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'Koneksi.php';
+include 'koneksi.php';
 
 // Pastikan hanya admin
 if (!isset($_SESSION['admin'])) {

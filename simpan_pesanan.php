@@ -1,5 +1,5 @@
 <?php
-include 'Koneksi.php'; // panggil koneksi
+include 'koneksi.php'; // panggil koneksi
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = $_POST['nama'];
